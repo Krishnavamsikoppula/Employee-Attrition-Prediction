@@ -1,0 +1,24 @@
+{% include 'head.html'%}
+<div class="text-success text-center mt-3 h5">Model Accuracy is : 62 %</div>
+<div class="container mt-5" style="height:80vh;overflow:auto">
+<table class="table table-bordered mt-2">
+    <tr>
+
+        <th style="font-size:12px">Department</th>
+        <th style="font-size:12px">{{data_columns[0]}}</th>
+        <th style="font-size:12px">{{data_columns[16]}}</th>
+        <th style="font-size:12px">Attrition Status</th>
+
+
+    </tr>
+    {% for data_row in data_rows%}
+    <tr>
+         <td>{{data_row[14]}}</td>
+        <td>{{data_row[0]}}</td>
+        <td>{{data_row[16]}}</td>
+        <td>{{data_row[12]}}</td>
+
+    </tr>
+    {% endfor%}
+</table>
+</div>

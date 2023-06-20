@@ -1,0 +1,279 @@
+{% include 'head.html'%}
+<div class="container mt-5">
+    <div class="text-center h4 text-primary">Update Details</div>
+    <form action="update_train_data" method="post">
+        <input type="hidden" name="index" value="{{index}}">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>EName</label>
+                    <input type="text"  name="Ename" value="{{data_row[0]}}" class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>Age</label>
+                    <input type="text" name="Age" value="{{data_row[1]}}" class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>NumCompaniesWorked</label>
+                    <input type="text" name="NumCompaniesWorked"  max="8" value="{{data_row[2]}}" class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>Previous company experience</label>
+                    <select name="Previous company experience" class="form-control">
+                         <option value="Yes "{% if data_row[3]=='Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if data_row[3]=='No' %} selected {% endif %}>No</option>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label>Job role in previous company</label>
+                    <select class="form-control" name="Job role in previous company">
+                        <option value="Junior Sales Executive" {% if data_row[4]=='Junior Sales Executive' %} selected {% endif %} >Junior Sales Executive</option>
+                        <option value="Manager" {% if data_row[4]=='Manager' %} selected {% endif %}>Manager</option>
+                        <option value="Laboratory Technician" {% if data_row[4]=='Laboratory Technician' %} selected {% endif %}>Laboratory Technician</option>
+                        <option value="Manufacturing Director" {% if data_row[4]=='Manufacturing Director' %} selected {% endif %}>Manufacturing Director</option>
+                        <option value="Healthcare Representative" {% if data_row[4]=='Healthcare Representative' %} selected {% endif %}>Healthcare Representative</option>
+                        <option value="Sales Representative" {% if data_row[4]=='Sales Representative' %} selected {% endif %}>Sales Representative</option>
+                         <option value="Junior Sales Executive" {% if data_row[4]=='Junior Sales Executive<' %} selected {% endif %}>Junior Sales Executive</option>
+                        <option value="Research Director" {% if data_row[4]=='Research Director' %} selected {% endif %}>Research Director</option>
+                        <option value="Research Scientist" {% if data_row[4]=='Research Scientist' %} selected {% endif %}>Research Scientist</option>
+                        <option value="Human Resources" {% if data_row[4]=='Human Resources' %} selected {% endif %}>Human Resources</option>
+                    </select>
+<!--                    <input type="text" name="Job role in previous company" value="{{data_row[4]}}" class="form-control mt-1">-->
+                </div>
+                  <div class="form-group mt-1">
+                    <label>Number of years experience in previous company</label>
+                    <input type="text" name="Number of years experience in prevoius company" max="10" value="{{data_row[5]}}" class="form-control mt-1">
+                </div>
+                  <div class="form-group mt-1">
+                    <label>Reason for leaving</label>
+                      <select class="form-control" name="Reason for leaving">
+                        <option value="Lack of flexible work options" {% if data_row[6]=='Lack of flexible work options' %} selected {% endif %}>Lack of flexible work options</option>
+                        <option value="for a higher pay" {% if data_row[6]=='for a higher pay' %} selected {% endif %}>for a higher pay</option>
+                        <option value="No previous experience" {% if data_row[6]=='No previous experience' %} selected {% endif %}>No previous experience</option>
+                        <option value="Lack of appreciation or recognition" {% if data_row[6]=='Lack of appreciation or recognition' %} selected {% endif %}>Lack of appreciation or recognition</option>
+                        <option value="Lack of opportunities for carrier growth and development" {% if data_row[6]=='Lack of opportunities for carrier growth and development' %} selected {% endif %}>Lack of opportunities for carrier growth and development</option>
+                    </select>
+                </div>
+                 <div class="form-group mt-1">
+                    <label>Salary in previous company</label>
+                    <input type="text" name="Salary in previous company" value="{{data_row[7]}}" class="form-control mt-1">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group mt-1">
+                    <label>Present expectation Y/N</label>
+                    <select name="Present expectation Y/N" class="form-control">
+                         <option value="Yes" {% if data_row[8]=='Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if data_row[8]=='No' %} selected {% endif %}>No</option>
+                    </select>
+<!--                    <input type="text" name="Present expectation Y/N" value="{{data_row[8]}}" class="form-control mt-1">-->
+                </div>
+              <div class="form-group mt-1">
+                    <label>Expectation of hike in %</label>
+                  <select name="Expectation of hike in %" class="form-control">
+                         <option value="0.35" {% if data_row[9]=='0.35' %} selected {% endif %}>0.35</option>
+                        <option value="0.5" {% if data_row[9]=='0.5' %} selected {% endif %}>0.5</option>
+                      <option value="0.3" {% if data_row[9]=='0.3' %} selected {% endif %}>0.3</option>
+                      <option value="0.15" {% if data_row[9]=='0.15' %} selected {% endif %}>0.15</option>
+                      <option value="0" {% if data_row[9]=='0' %} selected {% endif %}>0</option>
+                    </select>
+<!--                    <input type="text" name="Expectation of hike in %" value="{{data_row[9]}}" class="form-control mt-1">-->
+                </div>
+                <div class="form-group mt-1">
+                    <label>Promotion Y/N</label>
+                    <select name="Promotion Y/N" class="form-control">
+                        <option value="Yes" {% if data_row[10]=='Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if data_row[10]=='No' %} selected {% endif %}>No</option>
+                    </select>
+<!--                    <input type="text"  name="Promotion Y/N" value="{{data_row[10]}}" class="form-control mt-1">-->
+                </div>
+                <div class="form-group ">
+                    <label>New designation after promotion</label>
+                    <select class="form-control" name="New designation after promotion">
+                        <option value="Junior Sales Executive" {% if data_row[11]=='Junior Sales Executive' %} selected {% endif %}>Junior Sales Executive</option>
+                        <option value="Manager" {% if data_row[11]=='Manager' %} selected {% endif %}>Manager</option>
+                        <option value="Laboratory Technician" {% if data_row[11]=='Laboratory Technician' %} selected {% endif %}>Laboratory Technician</option>
+                        <option value="Manufacturing Director" {% if data_row[11]=='Manufacturing Director' %} selected {% endif %}>Manufacturing Director</option>
+                        <option value="Healthcare Representative" {% if data_row[11]=='Healthcare Representative' %} selected {% endif %}>Healthcare Representative</option>
+                        <option value="Sales Representative" {% if data_row[11]=='Sales Representative' %} selected {% endif %}>Sales Representative</option>
+                         <option value="Junior Sales Executive" {% if data_row[11]=='Junior Sales Executive' %} selected {% endif %}>Junior Sales Executive</option>
+                        <option value="Research Director" {% if data_row[11]=='Research Director' %} selected {% endif %}>Research Director</option>
+                        <option value="Research Scientist" {% if data_row[11]=='Research Scientist' %} selected {% endif %}>Research Scientist</option>
+                        <option value="Human Resources" {% if data_row[11]=='Human Resources' %} selected {% endif %}>Human Resources</option>
+                        <option value="Sales Executive" {% if data_row[11]=='Sales Executive' %} selected {% endif %}>Sales Executive</option>
+
+                    </select>
+<!--                    <input type="text" name="New designation after promotion" value="{{data_row[11]}}" class="form-control mt-1">-->
+                </div>
+
+                 <div class="form-group mt-1">
+                    <label>Attrition</label>
+                     <select name="Attrition" class="form-control">
+                         <option value="Yes" {% if data_row[12]=='Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if data_row[12]=='No' %} selected {% endif %}>No</option>
+                    </select>
+<!--                    <input type="text" name="Attrition" value="{{data_row[12]}}" class="form-control mt-1">-->
+                </div>
+                <div class="form-group mt-1">
+                    <label>BusinessTravel</label>
+                    <select class="form-control" name="BusinessTravel">
+                        <option value="Travel_Rarely" {% if data_row[13]=='Travel_Rarely' %} selected {% endif %}>Travel_Rarely</option>
+                        <option value="Travel_Frequently" {% if data_row[13]=='Travel_Frequently' %} selected {% endif %}>Travel_Frequently</option>
+                        <option value="Non-Travel" {% if data_row[13]=='Non-Travel' %} selected {% endif %}>Non-Travel</option>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label>Department</label>
+                    <select class="form-control" name="Department">
+                        <option value="Sales" {% if data_row[14]=='Sales' %} selected {% endif %}>Sales</option>
+                        <option value="Research & Development" {% if data_row[14]=='Research & Development' %} selected {% endif %}>Research & Development</option>
+                        <option value="Human Resources" {% if data_row[14]=='Human Resources' %} selected {% endif %}>Human Resources</option>
+                    </select>
+<!--                    <input type="text" name="Department" value="{{data_row[14]}}" class="form-control mt-1">-->
+                </div>
+                <div class="form-group mt-1">
+                    <label>Education Level</label>
+                     <select class="form-control" name="Education">
+                        <option value="1" {% if data_row[15]==1 %} selected {% endif %}>1</option>
+                        <option value="2" {% if data_row[15]==2 %} selected {% endif %}>2</option>
+                        <option value="3" {% if data_row[15]==3 %} selected {% endif %}>3</option>
+                         <option value="4" {% if data_row[15]==4 %} selected {% endif %}>4</option>
+                         <option value="5" {% if data_row[15]==5 %} selected {% endif %}>5</option>
+                    </select>
+<!--                    <input type="text" name="Education" value="{{data_row[15]}}" class="form-control mt-1">-->
+                </div>
+            </div>
+            <div class="col-md-3">
+                 <div class="form-group mt-1">
+                        <label>EmployeeNumber</label>
+                        <input type="text" name="EmployeeNumber" value="{{data_row[16]}}" class="form-control mt-1">
+                    </div>
+                     <div class="form-group mt-1">
+                        <label>EnvironmentSatisfaction</label>
+                         <select class="form-control" name="EnvironmentSatisfaction">
+                        <option value="1" {% if data_row[17]==1 %} selected {% endif %}>1</option>
+                        <option value="2" {% if data_row[17]==2 %} selected {% endif %}>2</option>
+                        <option value="3" {% if data_row[17]==3 %} selected {% endif %}>3</option>
+                         <option value="4" {% if data_row[17]==4 %} selected {% endif %}>4</option>
+                    </select>
+<!--                        <input type="text" name="EnvironmentSatisfaction" value="{{data_row[17]}}" class="form-control mt-1">-->
+                    </div>
+                     <div class="form-group mt-1">
+                         <label for="Gender">Gender</label>
+                     <input type="radio" id="Gender"  value="Male"
+                           {%if data_row[18]=="Male" %}
+                              checked
+                           {% endif %}
+                           name="Gender"> <label for="Gender">Male</label>
+                    <input type="radio" id="Gender1" name="Gender"
+                           {%if data_row[18]=="Female" %}
+                              checked
+                           {% endif %}
+                           value="Female"> <label for="Gender1">FeMale</label>
+                    </div>
+                     <div class="form-group mt-1">
+                        <label>JobInvolvement</label>
+                         <select class="form-control" name="JobInvolvement">
+                        <option value="1" {% if data_row[19]==1 %} selected {% endif %}>1</option>
+                        <option value="2" {% if data_row[19]==2 %} selected {% endif %}>2</option>
+                        <option value="3" {% if data_row[19]==3 %} selected {% endif %}>3</option>
+                         <option value="4" {% if data_row[19]==4 %} selected {% endif %}>4</option>
+                    </select>
+<!--                        <input type="text" name="JobInvolvement" value="{{data_row[19]}}" class="form-control mt-1">-->
+                    </div>
+                 <div class="form-group mt-1">
+                        <label>JobLevel</label>
+                      <select class="form-control" name="JobLevel">
+                        <option value="1" {% if data_row[20]==1 %} selected {% endif %}>1</option>
+                        <option value="2" {% if data_row[20]==2 %} selected {% endif %}>2</option>
+                        <option value="3" {% if data_row[20]==3 %} selected {% endif %}>3</option>
+                         <option value="4" {% if data_row[20]==3 %} selected {% endif %}>4</option>
+                          <option value="5" {% if data_row[20]==5 %} selected {% endif %}>5</option>
+                    </select>
+<!--                        <input type="text" name="JobLevel" value="{{data_row[20]}}" class="form-control mt-1">-->
+                    </div>
+                     <div class="form-group mt-1">
+                        <label>JobRole</label>
+                         <select class="form-control" name="JobRole">
+                            <option value="Junior Sales Executive" {% if data_row[21]=='Junior Sales Executive' %} selected {% endif %}>Junior Sales Executive</option>
+                            <option value="Manager" {% if data_row[21]=='Manager' %} selected {% endif %}>Manager</option>
+                            <option value="Laboratory Technician" {% if data_row[21]=='Laboratory Technician' %} selected {% endif %}>Laboratory Technician</option>
+                            <option value="Manufacturing Director" {% if data_row[21]=='Manufacturing Director' %} selected {% endif %}>Manufacturing Director</option>
+                            <option value="Healthcare Representative" {% if data_row[21]=='Healthcare Representative' %} selected {% endif %}>Healthcare Representative</option>
+                            <option value="Sales Representative" {% if data_row[21]=='Sales Representative' %} selected {% endif %}>Sales Representative</option>
+                             <option value="Junior Sales Executive" {% if data_row[21]=='Junior Sales Executive' %} selected {% endif %}>Junior Sales Executive</option>
+                            <option value="Research Director" {% if data_row[21]=='Research Director' %} selected {% endif %}>Research Director</option>
+                            <option value="Research Scientist" {% if data_row[21]=='Research Scientist' %} selected {% endif %}>Research Scientist</option>
+                            <option value="Human Resources" {% if data_row[21]=='Human Resources' %} selected {% endif %}>Human Resources</option>
+                            <option value="Sales Executive" {% if data_row[21]=='Sales Executive' %} selected {% endif %}>Sales Executive</option>
+                         </select>
+<!--                        <input type="text" name="JobRole" value="{{data_row[21]}}" class="form-control mt-1">-->
+                    </div>
+                <div class="form-group">
+                    <label>JobSatisfaction</label>
+                    <select class="form-control" name="JobSatisfaction">
+                        <option value="1" {% if data_row[22]==1 %} selected {% endif %}>1</option>
+                        <option value="2" {% if data_row[22]==2 %} selected {% endif %}>2</option>
+                        <option value="3" {% if data_row[22]==3 %} selected {% endif %}>3</option>
+                         <option value="4" {% if data_row[22]==4 %} selected {% endif %}>4</option>
+                    </select>
+<!--                    <input type="text" name="JobSatisfaction" value="{{data_row[22]}}" class="form-control mt-1">-->
+                </div>
+                 <div class="form-group mt-1">
+                    <label>MaritalStatus</label>
+                     <select name="MaritalStatus" class="form-control">
+                         <option value="Single" {% if data_row[23]=='Single' %} selected {% endif %}>Single</option>
+                         <option value="Married" {% if data_row[23]=='Married' %} selected {% endif %}>Married</option>
+                         <option value="Divorced" {% if data_row[23]=='Divorced' %} selected {% endif %}>Divorced</option>
+                     </select>
+<!--                    <input type="text" name="MaritalStatus" value="{{data_row[23]}}" class="form-control mt-1">-->
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group mt-1">
+                    <label>MonthlyIncome</label>
+                    <input type="text" name="MonthlyIncome" value="{{data_row[24]}}" class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>OverTime</label>
+                     <select name="OverTime" class="form-control">
+                         <option value="Yes" {% if data_row[25]=='Yes' %} selected {% endif %}>Yes</option>
+                        <option value="No" {% if data_row[25]=='No' %} selected {% endif %}>No</option>
+                    </select>
+                </div>
+                 <div class="form-group mt-1">
+                    <label>PerformanceRating</label>
+                     <select class="form-control" name="PerformanceRating">
+                        <option value="3" {% if data_row[26]==3 %} selected {% endif %}>3</option>
+                        <option value="4" {% if data_row[26]==4 %} selected {% endif %}>4</option>
+
+                    </select>
+<!--                    <input type="text"  name="PerformanceRating" value="{{data_row[26]}}" class="form-control mt-1">-->
+                </div>
+                 <div class="form-group mt-1">
+                    <label>StockOptionLevel</label>
+                     <select class="form-control" name="StockOptionLevel">
+                          <option value="0" {% if data_row[27]==0 %} selected {% endif %}>0</option>
+                          <option value="1" {% if data_row[27]==1 %} selected {% endif %}>1</option>
+                         <option value="2" {% if data_row[27]==2 %} selected {% endif %}>2</option>
+                        <option value="3" {% if data_row[27]==3 %} selected {% endif %}>3</option>
+                    </select>
+<!--                    <input type="text" name="StockOptionLevel" value="{{data_row[27]}}" class="form-control mt-1">-->
+                </div>
+                 <div class="form-group mt-1">
+                    <label>TotalWorkingYears</label>
+                    <input type="text" name="TotalWorkingYears" value="{{data_row[28]}}" class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>YearsAtCompany</label>
+                    <input type="text" name="YearsAtCompany" value="{{data_row[29]}}" class="form-control mt-1">
+                </div>
+                <div class="form-group">
+                    <label>YearsWithCurrManager</label>
+                    <input type="text" name="YearsWithCurrManager" value="{{data_row[30]}}" class="form-control">
+                </div>
+                <input type="submit" value="Update" class="btn btn-primary mt-4 w-100">
+             </div>
+        </div>
+      </form>
+</div>

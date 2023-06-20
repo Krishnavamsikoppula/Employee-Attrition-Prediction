@@ -1,0 +1,44 @@
+<head>
+  <title>EmployeeAttritionPrediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+{% if session['role'] =='employer'%}
+<nav class="navbar navbar-expand-sm  navbar-dark bg-primary">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link  h3" href="/ehome" style="color:#FFDEAD">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link  h3" href="/upload_train" style="color:#FFDEAD">Employee Details</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link  h3" href="/upload_test" style="color:#FFDEAD">Report</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link  h3" href="/Predictions" style="color:#FFDEAD">Predictions</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link  h3" href="/get_graphs" style="color:#FFDEAD">Graphs</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link  h3" href="/logout" style="color:#FFDEAD">Logout</a>
+    </li>
+
+  </ul>
+  <div class="text-end text-white h3" style="margin-left:300px">Employee Attrition Prediction</div>
+</nav>
+{% else%}
+<nav class="navbar navbar-expand-sm  navbar-dark bg-primary">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link text-white h3" href="/">Home</a>
+    </li>
+
+  </ul>
+  <div class="text-end text-white h3" style="margin-left:300px">Employee Attrition Prediction</div>
+</nav>
+{% endif%}

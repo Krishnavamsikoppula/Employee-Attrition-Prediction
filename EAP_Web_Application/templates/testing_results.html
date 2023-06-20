@@ -1,0 +1,18 @@
+{% include 'head.html'%}
+<div class="container mt-5">
+    <div class=""><b>Top 5 high risk attrition employee list</b></div>
+<table class="table table-bordered mt-2">
+    <tr>
+    {% for data_column in data_columns%}
+    <th style="font-size:12px">{{data_column}}</th>
+    {% endfor%}
+    </tr>
+    {% for data_row in data_rows%}
+    <tr>
+        {% for i in range (len(data_columns))%}
+        <td>{{data_row[i]}}</td>
+        {% endfor%}
+    </tr>
+    {% endfor%}
+</table>
+</div>

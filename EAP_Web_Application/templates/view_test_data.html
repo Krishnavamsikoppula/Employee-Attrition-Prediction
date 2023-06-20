@@ -1,0 +1,29 @@
+{% include 'head.html'%}
+<div class="" style="height:70vh;overflow:auto">
+
+<table class="table table-bordered">
+    <tr>
+    {% for data_column in data_columns%}
+    <th style="font-size:12px">{{data_column}}</th>
+    {% endfor%}
+        <th>Action</th>
+    </tr>
+    {% set count = namespace(value=0) %}
+    {% for data_row in data_rows%}
+    <tr>
+        {% for i in range (len(data_columns))%}
+        <td>{{data_row[i]}}</td>
+        {% endfor%}
+        <td><a href="update_test_data_row?index={{count.value}}" class="btn btn-primary w-100">Update</a></td>
+    </tr>
+     {% set count.value = count.value +1 %}
+    {% endfor%}
+</table>
+</div>
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3"> <a href="test" class="mt-3 btn btn-primary">Generate Report</a></div>
+    <div class="col-md-3"> <td><a href="add_test_data_row" class="mt-3 btn btn-primary w-100">Add New Employee</a></td></div>
+
+</div>

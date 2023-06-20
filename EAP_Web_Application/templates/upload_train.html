@@ -1,0 +1,16 @@
+{% include 'head.html'%}
+<div class="container mt-4">
+    <div class="row mt-5">
+        <div class="col-md-4"></div>
+         <div class="col-md-4 mt-5">
+              <div class="text-center h6">Upload TrainData</div>
+             <form action="train_upload1" method="post" enctype="multipart/form-data">
+                 <div class="form-group mt-5">
+                     <label for="upload_train"></label>
+                     <input type="file" name="UploadTrain" class="form-control p-3" id="" required>
+                 </div>
+                 <input type="submit" value="Upload" class="btn btn-primary mt-3">
+             </form>
+         </div>
+    </div>
+</div>

@@ -1,0 +1,254 @@
+{% include 'head.html'%}
+<div class="container mt-5">
+    <div class="text-center h4 text-primary">Add Details</div>
+    <form action="add_train_data1" method="post">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>EName</label>
+                    <input type="text"  name="Ename"  class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>Age</label>
+                    <input type="text" name="Age"  class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>NumCompaniesWorked</label>
+                    <input type="text" name="NumCompaniesWorked"  max="8"  class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>Previous company experience</label>
+                    <select name="Previous company experience" class="form-control">
+                         <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label>Job role in previous company</label>
+                    <select class="form-control" name="Job role in previous company">
+                        <option value="Junior Sales Executive">Junior Sales Executive</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Laboratory Technician">Laboratory Technician</option>
+                        <option value="Manufacturing Director">Manufacturing Director</option>
+                        <option value="Healthcare Representative">Healthcare Representative</option>
+                        <option value="Sales Representative">Sales Representative</option>
+                         <option value="Junior Sales Executive">Junior Sales Executive</option>
+                        <option value="Research Director">Research Director</option>
+                        <option value="Research Scientist">Research Scientist</option>
+                        <option value="Human Resources">Human Resources</option>
+                    </select>
+                </div>
+                  <div class="form-group mt-1">
+                    <label>Number of years experience in previous company</label>
+                    <input type="text" name="Number of years experience in prevoius company" max="10"  class="form-control mt-1">
+                </div>
+                  <div class="form-group mt-1">
+                    <label>Reason for leaving</label>
+                      <select class="form-control" name="Reason for leaving">
+                        <option value="Lack of flexible work options">Lack of flexible work options</option>
+                        <option value="for a higher pay">for a higher pay</option>
+                        <option value="No previous experience">No previous experience</option>
+                        <option value="Lack of appreciation or recognition">Lack of appreciation or recognition</option>
+                        <option value="Lack of opportunities for carrier growth and development">Lack of opportunities for carrier growth and development</option>
+                    </select>
+                </div>
+                 <div class="form-group mt-1">
+                    <label>Salary in previous company</label>
+                    <input type="text" name="Salary in previous company"  class="form-control mt-1">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group mt-1">
+                    <label>Present expectation Y/N</label>
+                    <select name="Present expectation Y/N" class="form-control">
+                         <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+              <div class="form-group mt-1">
+                    <label>Expectation of hike in %</label>
+                  <select name="Expectation of hike in %" class="form-control">
+                         <option value="0.35">0.35</option>
+                        <option value="0.5">0.5</option>
+                      <option value="0.3">0.3</option>
+                      <option value="0.15">0.15</option>
+                      <option value="0">0</option>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label>Promotion Y/N</label>
+                    <select name="Promotion Y/N" class="form-control">
+                         <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label>New designation after promotion</label>
+                    <select class="form-control" name="New designation after promotion">
+                        <option value="Junior Sales Executive">Junior Sales Executive</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Laboratory Technician">Laboratory Technician</option>
+                        <option value="Manufacturing Director">Manufacturing Director</option>
+                        <option value="Healthcare Representative">Healthcare Representative</option>
+                        <option value="Sales Representative">Sales Representative</option>
+                         <option value="Junior Sales Executive">Junior Sales Executive</option>
+                        <option value="Research Director">Research Director</option>
+                        <option value="Research Scientist">Research Scientist</option>
+                        <option value="Human Resources">Human Resources</option>
+                        <option value="Sales Executive">Sales Executive</option>
+
+                    </select>
+                </div>
+                 <div class="form-group mt-1">
+                    <label>Attrition</label>
+                     <select name="Attrition" class="form-control">
+                         <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label>BusinessTravel</label>
+                    <select class="form-control" name="BusinessTravel">
+                        <option value="Travel_Rarely">Travel_Rarely</option>
+                        <option value="Travel_Frequently">Travel_Frequently</option>
+                        <option value="Non-Travel">Non-Travel</option>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label>Department</label>
+                    <select class="form-control" name="Department">
+                        <option value="Sales">Sales</option>
+                        <option value="Research & Development">Research & Development</option>
+                        <option value="Human Resources">Human Resources</option>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label>Education Level</label>
+                     <select class="form-control" name="Education">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                         <option value="4">4</option>
+                         <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                 <div class="form-group mt-1">
+                        <label>EmployeeNumber</label>
+                        <input type="text" name="EmployeeNumber"  class="form-control mt-1">
+                    </div>
+                     <div class="form-group mt-1">
+                        <label>EnvironmentSatisfaction</label>
+                         <select class="form-control" name="EnvironmentSatisfaction">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                         <option value="4">4</option>
+                    </select>
+                    </div>
+                     <div class="form-group mt-1">
+                         <label for="Gender">Gender</label>
+                        <input type="radio" class="" id="Gender"  value="Male" name="Gender"> <label for="Gender">Male</label>
+                        <input type="radio" id="Gender1" name="Gender" value="Female"> <label for="Gender">FeMale</label>
+                    </div>
+                     <div class="form-group mt-1">
+                        <label>JobInvolvement</label>
+                         <select class="form-control" name="JobInvolvement">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                         <option value="4">4</option>
+                    </select>
+                    </div>
+                 <div class="form-group mt-1">
+                        <label>JobLevel</label>
+                      <select class="form-control" name="JobLevel">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                         <option value="4">4</option>
+                          <option value="5">5</option>
+                    </select>
+                    </div>
+                     <div class="form-group mt-1">
+                        <label>JobRole</label>
+                         <select class="form-control" name="JobRole">
+                            <option value="Junior Sales Executive">Junior Sales Executive</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Laboratory Technician">Laboratory Technician</option>
+                            <option value="Manufacturing Director">Manufacturing Director</option>
+                            <option value="Healthcare Representative">Healthcare Representative</option>
+                            <option value="Sales Representative">Sales Representative</option>
+                             <option value="Junior Sales Executive">Junior Sales Executive</option>
+                            <option value="Research Director">Research Director</option>
+                            <option value="Research Scientist">Research Scientist</option>
+                            <option value="Human Resources">Human Resources</option>
+                            <option value="Sales Executive">Sales Executive</option>
+                         </select>
+                    </div>
+                <div class="form-group">
+                    <label>JobSatisfaction</label>
+                    <select class="form-control" name="JobSatisfaction">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                         <option value="4">4</option>
+                    </select>
+                </div>
+                 <div class="form-group mt-1">
+                    <label>MaritalStatus</label>
+                     <select name="MaritalStatus" class="form-control">
+                         <option value="Single">Single</option>
+                         <option value="Married">Married</option>
+                         <option value="Divorced">Divorced</option>
+                     </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group mt-1">
+                    <label>MonthlyIncome</label>
+                    <input type="text" name="MonthlyIncome"  class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>OverTime</label>
+                     <select name="OverTime" class="form-control">
+                         <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                 <div class="form-group mt-1">
+                    <label>PerformanceRating</label>
+                     <select class="form-control" name="PerformanceRating">
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+
+                    </select>
+<!--                    <input type="text"  name="PerformanceRating"  class="form-control mt-1">-->
+                </div>
+                 <div class="form-group mt-1">
+                    <label>StockOptionLevel</label>
+                      <select class="form-control" name="StockOptionLevel">
+                          <option value="0" >0</option>
+                          <option value="1">1</option>
+                         <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                 <div class="form-group mt-1">
+                    <label>TotalWorkingYears</label>
+                    <input type="text" name="TotalWorkingYears"  class="form-control mt-1">
+                </div>
+                <div class="form-group mt-1">
+                    <label>YearsAtCompany</label>
+                    <input type="text" name="YearsAtCompany"  class="form-control mt-1">
+                </div>
+                <div class="form-group">
+                    <label>YearsWithCurrManager</label>
+                    <input type="text" name="YearsWithCurrManager"  class="form-control">
+                </div>
+                <input type="submit" value="Add Data" class="btn btn-primary mt-4 w-100">
+             </div>
+        </div>
+      </form>
+</div>
